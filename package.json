@@ -14,6 +14,8 @@
     "@sequelize/mariadb": "^7.0.0-alpha.44",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "express-validation": "^4.1.1",
+    "http-errors": "^2.0.0",
     "sequelize": "^6.37.5"
   }
 }
