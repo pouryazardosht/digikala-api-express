@@ -21,7 +21,7 @@ const Product = sequelize.define(
   {
     modelName: "product",
     createdAt: "created_at",
-    updatedAt: ":updated_at",
+    updatedAt: "updated_at",
   },
 );
 

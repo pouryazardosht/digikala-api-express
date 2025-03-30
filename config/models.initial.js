@@ -36,7 +36,7 @@ async function initDatabase() {
     targetKey: "id",
   });
 
-  // await sequelize.sync({ force: true });
+  // await sequelize.sync({ alter: true });
 }
 
 module.exports = { initDatabase };
