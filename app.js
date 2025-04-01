@@ -2,6 +2,7 @@ const { config } = require("dotenv");
 const express = require("express");
 const { initDatabase } = require("./config/models.initial");
 const { productRoutes } = require("./modules/product/product.routes");
+const { authRoutes } = require("./modules/auth/auth.routes");
 
 config();
 
@@ -13,6 +14,8 @@ async function main() {
   app.use(express.urlencoded({ extended: true }));
 
   app.use("/product", productRoutes);
+  app.use("/auth", authRoutes);
+
   app.use((req, res, next) => {
     return res.status(404).json({ message: "Not found" });
   });

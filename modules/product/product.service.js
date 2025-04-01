@@ -128,8 +128,24 @@ async function getProductByIdHandler(req, res, next) {
   }
 }
 
+async function deleteProductHandler(req, res, next) {
+  try {
+    const { id } = req.params;
+    const product = await Product.findByPk(id);
+    if (!product) {
+      throw createHttpError(404, "Product not found");
+    }
+    await product.destroy();
+    return res.json({
+      message: "Product deleted successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+}
 module.exports = {
   createProductHandler,
   getProductsHandler,
   getProductByIdHandler,
+  deleteProductHandler,
 };
